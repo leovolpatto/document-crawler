@@ -11,21 +11,14 @@ const crawler = new Crawler();
 const app = express();
 app.get('/', function (req: any, res: any) {
   
+  const hs = [...crawler.status].reverse();
+
   const x = {
     djow:"Diego's crawler is up...",
     currentDoc: crawler.currentDoc,
     startedFrom: crawler.startFrom,
     crawlingUntil: crawler.crawlUntil,
-    history: crawler.status.sort((a, b) => {
-      if(a.doc < b.doc){
-        return -1;
-      }
-      if(a.doc > b.doc){
-        return 1;
-      }
-
-      return 0;
-    })
+    history: hs
   }
 
   res.json(x);

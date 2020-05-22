@@ -33,13 +33,13 @@ export class Crawler {
                 }
                 catch (e) {
                     console.error(i, e);
-                    this.putStatus(i, e.getMessage());
+                    this.putStatus(i, 'error');
                 }
             }
         }
         catch (e) {
             console.error(e);
-            this.putStatus(0, "Fatal error. Stopping.", e.getMessage());
+            this.putStatus(0, "Fatal error. Stopping.");
         }
     }
 
