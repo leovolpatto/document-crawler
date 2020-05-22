@@ -15,6 +15,7 @@ export class Crawler {
             date: new Date(),
             doc: doc,
             status: status,
+            link: `http://54.88.64.165:89/cv/${doc}.pdf`,
             details: details
         });
     }
