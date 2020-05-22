@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from 'axios';
-import fs, { WriteStream } from 'fs';
+import fs, { WriteStream, stat } from 'fs';
 import * as path from 'path';
 import { IncomingMessage } from 'http';
 
@@ -15,7 +15,7 @@ export class Crawler {
             date: new Date(),
             doc: doc,
             status: status,
-            link: `http://54.88.64.165:89/cv/${doc}.pdf`,
+            link: status.indexOf('OK') >= 0 ? `http://54.88.64.165:89/cv/${doc}.pdf` : '',
             details: details
         });
     }
