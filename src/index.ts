@@ -9,6 +9,7 @@ dotenv.config();
 const crawler = new Crawler();
 
 const app = express();
+app.use(express.static('cvs'));
 app.get('/', function (req: any, res: any) {
   
   const hs = [...crawler.status].reverse();
