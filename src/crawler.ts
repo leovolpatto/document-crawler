@@ -7,7 +7,7 @@ export class Crawler {
 
     public status: Array<any>  = [];
     public startFrom = 1;
-    public crawlUntil = 60000;    
+    public crawlUntil = 100000;    
     public currentDoc = 0;
 
     private putStatus(doc: number, status: string, details: any = null){
