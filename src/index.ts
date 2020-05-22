@@ -9,13 +9,6 @@ dotenv.config();
 const crawler = new Crawler();
 
 const app = express();
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-app.use('/sync', function (req: any, res: any) {
-  //consumer.start();
-});
-
 app.get('/', function (req: any, res: any) {
   
   const x = {
@@ -29,7 +22,7 @@ app.get('/', function (req: any, res: any) {
   res.json(x);
 });
 
-const PORT = process.env.SERVER_LISTENING_PORT || 4446;
+const PORT = 4441;
 const httpServer = createServer(app);
 httpServer.listen({
   port: PORT
