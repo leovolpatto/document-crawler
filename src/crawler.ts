@@ -92,8 +92,8 @@ export class Crawler {
         }
         catch (e) {
             //ETIMEDOUT
-            const x = JSON.parse(e);
-            return `${name}: ${x}`;
+            console.error(e);
+            return `${name}: Fail`;
         }
     }
 
