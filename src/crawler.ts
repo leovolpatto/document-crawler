@@ -12,7 +12,7 @@ export class Crawler {
 
     private putStatus(doc: number, status: string, details: any = null){
         this.status.push({
-            date: Date.now(),
+            date: new Date(),
             doc: doc,
             status: status,
             details: details
