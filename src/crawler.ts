@@ -92,7 +92,8 @@ export class Crawler {
         }
         catch (e) {
             //ETIMEDOUT
-            return `${name}: ${e.getMessage()}`;
+            const x = JSON.parse(e);
+            return `${name}: ${x}`;
         }
     }
 
